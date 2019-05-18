@@ -27,8 +27,8 @@ But the colors weren't like my childhood memories... In our TV we used to adjust
 Added -0.25 to each RGB and multiplied to 1.34...  Well done!
 
 For mixing colors, I've converted each color to LCH space then grouped them by hue.  
-Will mix them inside each group, between 2 neighbours color groups and will mix no color group and each color group.
+Then we will mix colors inside each group, between 2 neighbours color groups and will mix the no color group and each color group.
 
-For better results, in GIMP always adjust levels, brightness, contrast, saturation and resize image before running the plugin.
+For better results, in GIMP always adjust black/white levels, brightness, contrast, saturation and resize image before running the plug-in.
 
 Many thanks to Leandro Correia and Rogerio Penchel for inspiration.
