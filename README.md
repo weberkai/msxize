@@ -1,8 +1,6 @@
 # msxize
-MSX1 GIMP plugin
 
-The Gimp plug-in for msx-ize pictures.
-(c) Weber Estevan Roder Kai, 2019
+The Gimp plug-in for msx-ize pictures. (c) Weber Estevan Roder Kai, 2019
 
 Built up from the [zx-ize plug-in](http://jafma.net/software/zxscreen/) by Juan-Antonio Fernández-Madrigal  
 (c) Juan-Antonio Fernández-Madrigal, 2011  
