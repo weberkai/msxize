@@ -1,8 +1,8 @@
 # MSXize
 
-The Gimp plug-in for msx-ize pictures. (c) Weber Estevan Roder Kai, 2019
+The Gimp plug-in for MSX-ize pictures. (c) Weber Estevan Roder Kai, 2019
 
-Built up from the [zx-ize plug-in](http://jafma.net/software/zxscreen/) by Juan-Antonio Fernández-Madrigal  
+Built up from the [ZX-ize plug-in](http://jafma.net/software/zxscreen/) by Juan-Antonio Fernández-Madrigal  
 (c) Juan-Antonio Fernández-Madrigal, 2011  
 "jafmag" (remove quotes) at gmail.
 
@@ -16,16 +16,16 @@ To install the plug-in in the ~/.gimp-2.x/plug-ins , close The Gimp and write in
 	
 If there is any package missing (typically libgimp-dev), you will be warned at that call.
 
-Parameters:  
-MSXDMANUAIS is the maximum Y difference to merge colors. Range: 0 - 255  
-MSXTDITHER is the matriz size for ordered dithering. Values: 2, 4 or 8
-
 I've created the palette using values from VDP TMS9928 datasheet with R-Y = 0.80 in color 9 to avoid overflow.  
 But the colors weren't like my childhood memories... In our TV we used to adjust brightness and contrast, so I did this as well...  
 Added -0.25 to each RGB and multiplied to 1.34...  Well done!
 
 For mixing colors, I've converted each color to LCH space then grouped them by hue.  
 Then we will mix colors inside each group, between 2 neighbours color groups and will mix the no color group and each color group.
+
+Parameters:  
+MSXDMANUAIS is the maximum Y difference between 2 colors to merge them. Range: 0 - 255  
+MSXTDITHER is the matriz size for ordered dithering. Values: 2, 4 or 8
 
 For better results, in GIMP always adjust black/white levels, brightness, contrast, saturation and resize image before running the plug-in.
 
