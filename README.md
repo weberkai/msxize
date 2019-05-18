@@ -30,3 +30,5 @@ MSXTDITHER is the matriz size for ordered dithering. Values: 2, 4 or 8
 For better results, in The GIMP always adjust black/white levels, brightness, contrast, saturation and resize image before running the plug-in.
 
 Many thanks to Leandro Correia and Rogerio Penchel for inspiration.
+
+This project contains a GNU general public license version 3.
