@@ -163,6 +163,7 @@ static int MSX_Colors1[MSXNCOLORS][4]={ /* R,G,B for each MSX color (MSX order) 
 	//Added -0.25 to each RGB and multiplied to 1.34...
 	//Well done!
 	{0,0,0,0},
+	{0,0,0,0},
 	{0,183,3,108},
 	{41,209,75,144},
 	{27,28,232,51},
