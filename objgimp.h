@@ -21,13 +21,11 @@ class ObjSpecific;
 
 class ObjGimp {
 	public:
-		ObjGimp(ObjSpecific &objspecific) : p_objspecific(objspecific) {};
-		void Convert(GimpDrawable *drawable);
+		void Convert(GimpDrawable *drawable, ObjSpecific &objspecific);
 		void AtualizaProgresso(double progresso);
 	private:
 		//Image info
 		gint x1, y1, x2, y2, width, height, channels;
-		ObjSpecific &p_objspecific;
 };
 
 class ObjSpecific {

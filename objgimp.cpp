@@ -30,7 +30,7 @@ void BufferRGB::getSize(int &width, int &height) {
 	height = this->height;
 }
 
-void ObjGimp::Convert(GimpDrawable *drawable) {
+void ObjGimp::Convert(GimpDrawable *drawable, ObjSpecific &objspecific) {
 	AtualizaProgresso(0.0);
 	
 	/* Gets upper left and lower right coordinates, and layers number in the image. Right lower is not in the selection */
@@ -71,7 +71,7 @@ void ObjGimp::Convert(GimpDrawable *drawable) {
 		
 		/* Do work */
 		BufferRGB bufferoutrgb(width, height);
-		this->p_objspecific.Convert(bufferinrgb, bufferoutrgb, (*this));
+		objspecific.Convert(bufferinrgb, bufferoutrgb, (*this));
 		
 		//Fill bufferout from bufferoutrgb 
 		{

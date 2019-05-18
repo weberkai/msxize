@@ -80,8 +80,8 @@ static void run(const gchar *name, gint nparams, const GimpParam *param, gint *n
 	
 	/* Do the work */
 	MSXConvert msxconvert;
-	ObjGimp objGimp(msxconvert);
-	objGimp.Convert(drawable);
+	ObjGimp objGimp;
+	objGimp.Convert(drawable, msxconvert);
 
 	/* Unset status text */
 	gimp_progress_end();
