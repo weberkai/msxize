@@ -1,6 +1,6 @@
 # MSXize
 
-The Gimp plug-in for MSX-ize pictures. (c) Weber Estevan Roder Kai, 2019
+The GIMP plug-in for MSX-ize pictures. (c) Weber Estevan Roder Kai, 2019
 
 Built up from the [ZX-ize plug-in](http://jafma.net/software/zxscreen/) by Juan-Antonio Fernández-Madrigal  
 (c) Juan-Antonio Fernández-Madrigal, 2011  
@@ -10,7 +10,7 @@ Built up from the [example blur plug-in](http://developer.gimp.org/writing-a-plu
 
 Built up from the [C++ ColorSpace Library](https://github.com/berendeanicolae/ColorSpace) by Berendea Nicolae  
 
-To install the plug-in in the ~/.gimp-2.x/plug-ins , close The Gimp and write in console:
+To install the plug-in in the ~/.gimp-2.x/plug-ins , close The GIMP and write in console:
 	
 `CC=g++ LIBS="-lm" CFLAGS="-std=c++11 -O3 -omsxize" gimptool-2.0 --install "ColorSpace.cpp Comparison.cpp Conversion.cpp msxize.cpp"`
 	
@@ -27,6 +27,6 @@ Parameters:
 MSXDMANUAIS is the maximum Y difference between 2 colors to merge them. Range: 0 - 255  
 MSXTDITHER is the matriz size for ordered dithering. Values: 2, 4 or 8
 
-For better results, in GIMP always adjust black/white levels, brightness, contrast, saturation and resize image before running the plug-in.
+For better results, in The GIMP always adjust black/white levels, brightness, contrast, saturation and resize image before running the plug-in.
 
 Many thanks to Leandro Correia and Rogerio Penchel for inspiration.
