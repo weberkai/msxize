@@ -12,7 +12,7 @@ Built up from the [C++ ColorSpace Library](https://github.com/berendeanicolae/Co
 
 To install the plug-in in the ~/.gimp-2.x/plug-ins , close The GIMP and write in console:
 	
-`CC=g++ LIBS="-lm" CFLAGS="-std=c++11 -O3 -omsxize" gimptool-2.0 --install "ColorSpace.cpp Comparison.cpp Conversion.cpp msxize.cpp"`
+`CC=g++ LIBS="-lm" CFLAGS="-std=c++11 -O3 -omsxize" gimptool-2.0 --install "ColorSpace.cpp Comparison.cpp Conversion.cpp objgimp.cpp objmsx.cpp msxize.cpp""`
 	
 If there is any package missing (typically libgimp-dev), you will be warned at that call.
 
