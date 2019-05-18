@@ -1,5 +1,4 @@
 #include "ColorSpace.h"
-#include "Conversion.h"
 
 namespace ColorSpace {
 	Rgb::Rgb() {}

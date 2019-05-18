@@ -1,7 +1,4 @@
 #include "Comparison.h"
-#include "Utils.h"
-#define _USE_MATH_DEFINES
-#include <cmath>
 
 namespace ColorSpace {
 	double EuclideanComparison::Compare(IColorSpace *a, IColorSpace *b) {

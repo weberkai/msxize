@@ -1,6 +1,10 @@
 #ifndef COMPARISON_H
 #define COMPARISON_H
 
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include "Utils.h"
+
 #include "ColorSpace.h"
 
 namespace ColorSpace {

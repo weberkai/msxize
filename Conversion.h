@@ -1,6 +1,11 @@
 #ifndef RGB_CONVERTER_H
 #define RGB_CONVERTER_H
 
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <algorithm>
+#include "Utils.h"
+
 namespace ColorSpace {
 	struct Rgb;
 	struct Xyz;

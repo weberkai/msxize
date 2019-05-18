@@ -1,9 +1,5 @@
 #include "Conversion.h"
 #include "ColorSpace.h"
-#include "Utils.h"
-#define _USE_MATH_DEFINES
-#include <cmath>
-#include <algorithm>
 
 namespace ColorSpace {
 	double Hue_2_RGB(double v1, double v2, double vh) {
@@ -14,8 +10,6 @@ namespace ColorSpace {
 		if (3 * vh < 2) return v1 + (v2 - v1)*(2.0 / 3.0 - vh) * 6;
 		return v1;
 	}
-
-
 
 	void RgbConverter::ToColorSpace(Rgb *color, Rgb *item) {
 		item->r = color->r;

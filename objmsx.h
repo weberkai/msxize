@@ -1,16 +1,16 @@
 #ifndef OBJMSX_H
 #define OBJMSX_H
 
-#include "ColorSpace.h"
-#include "Comparison.h"
-#include "Conversion.h"
-
 #include "objgimp.h"
-#include "objdither.h"
 
 #include <cmath>        // std::abs
 #include <vector>
 #include <map>
+
+#include "ColorSpace.h"
+#include "Comparison.h"
+
+#include "objdither.h"
 
 /* --------------------- MSX PARAMETERS ------------------------ */
 
