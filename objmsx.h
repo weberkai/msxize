@@ -122,7 +122,7 @@ class Bloco {
 
 class MSXConvert : public ObjSpecific {
 	public:
-		void Convert(BufferRGB &bufferin, BufferRGB &bufferout, ObjGimp &objectgimp);
+		void Convert(BufferRGB &bufferin, BufferRGB &bufferout, ObjGimp &objgimp);
 	private:
 		int chunkV, chunksV, chunkH, chunksH;
 		std::vector< CorPossivel > corespossiveis;

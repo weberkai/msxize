@@ -303,7 +303,7 @@ void Bloco::CopiaNovoMSX() {
 	}
 }
 
-void MSXConvert::Convert(BufferRGB &bufferin, BufferRGB &bufferout, ObjGimp &objectgimp) {
+void MSXConvert::Convert(BufferRGB &bufferin, BufferRGB &bufferout, ObjGimp &objgimp) {
 	PreencheCoresPossiveis();
 	int progresso = 0;
 	int width, height;
@@ -364,7 +364,7 @@ void MSXConvert::Convert(BufferRGB &bufferin, BufferRGB &bufferout, ObjGimp &obj
 
 			//Atualiza Progresso
 			progresso++;
-			objectgimp.AtualizaProgresso((double)progresso / (double)(chunksV * chunksH));
+			objgimp.AtualizaProgresso((double)progresso / (double)(chunksV * chunksH));
 			
 			//atualiza coluna
 			chunkH++;
