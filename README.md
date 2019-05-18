@@ -1,6 +1,6 @@
 # MSXize
 
-The C++ GIMP plug-in for MSX-ize pictures. (c) Weber Estevan Roder Kai, 2019
+The GIMP C++ plug-in for MSX-ize pictures. (c) Weber Estevan Roder Kai, 2019
 
 Built up from the [ZX-ize plug-in](http://jafma.net/software/zxscreen/) by Juan-Antonio Fernández-Madrigal  
 (c) Juan-Antonio Fernández-Madrigal, 2011  
