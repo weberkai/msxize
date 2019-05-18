@@ -25,7 +25,7 @@
 #define MSXNGRUPOS 7
 
 /* Merge color with Y difference below... */
-#define MSXDMANUAIS 100
+#define MSXDMANUAIS 128
 
 /* Ordered dither matrix size */
 #define MSXTDITHER 8
