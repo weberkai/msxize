@@ -1,4 +1,4 @@
-# msxize
+# MSXize
 
 The Gimp plug-in for msx-ize pictures. (c) Weber Estevan Roder Kai, 2019
 
