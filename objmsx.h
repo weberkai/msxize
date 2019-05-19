@@ -11,6 +11,7 @@
 #include "Comparison.h"
 
 #include "objdither.h"
+#include <iostream>
 
 /* --------------------- MSX PARAMETERS ------------------------ */
 
@@ -57,7 +58,7 @@ static int MSX_Colors1[MSXNCOLORS][4]={ /* R,G,B for each MSX color (MSX order) 
 	{255,255,255,255},
 };
 
-static int MSX_Groups[MSXNGRUPOS][3]={
+static int MSX_Groups[MSXNGRUPOS][10]={
 	//Converted each color to LCH space then grouped them by hue
 	//Will mix them inside each group
 	//Will mix them between 2 neighbours color groups
@@ -66,9 +67,9 @@ static int MSX_Groups[MSXNGRUPOS][3]={
 	{ 6,  8,  9}, //Red
 	{10, 11,  0}, //Yellow
 	{12,  2,  3}, //Green
-	{ 7,  0,  0}, //Magenta
+	{ 7,  0,  0}, //Cyan
 	{ 4,  5,  0}, //Blue
-	{13,  0,  0}  //Cyan
+	{13,  0,  0}  //Magenta
 };
 
 struct CorPossivel {

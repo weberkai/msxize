@@ -393,67 +393,76 @@ void MSXConvert::PreencheCoresPossiveis() {
 	//Processa grupos
 	for (int grupoatual1 = 0; grupoatual1 < MSXNGRUPOS; grupoatual1++) {
 		for (int grupoatual2 = 0; grupoatual2 < MSXNGRUPOS; grupoatual2++) {
-			bool processar = false;
+			bool processar1 = false;
 			//Dentro do grupo
 			if (grupoatual1 == grupoatual2) {
-				processar = true;
+				processar1 = true;
 			}
 			//Sem cores x cores
 			else
-			if (grupoatual1 == 0) {
-				processar = true;
+			if ((grupoatual1 == 0) || (grupoatual2 == 0)) {
+				processar1 = true;
 			}
-			//Entre grupos
+			//Proximo grupo
 			else
-			if ((grupoatual2 == (grupoatual1 +1)) || (grupoatual1 == MSXNGRUPOS) &&  (grupoatual2 == 1)) {
-				processar = true;
+			if ((grupoatual2 == (grupoatual1 + 1)) || ((grupoatual1 == (MSXNGRUPOS - 1)) && (grupoatual2 == 1))) {
+				processar1 = true;
 			}
-			if (processar) {
-				int coratual1 = 0;
-				int coratual2 = 0;
-				bool temnogrupo = true;
-				while (temnogrupo) {
-					int cor1 = MSX_Groups[grupoatual1][coratual1];
-					int cor2 = MSX_Groups[grupoatual2][coratual2];
-					if ((cor1 != 0) && (cor2 != 0)) {
+			//Grupo anterior
+			else
+			if (((grupoatual2 + 1) == grupoatual1) || ((grupoatual1 == 1) && (grupoatual2 == (MSXNGRUPOS - 1)))) {
+				processar1 = true;
+			}
+			if (processar1) {
+				//std::cout << "grupoatual1 " << grupoatual1 << " grupoatual2 " << grupoatual2 << "\n";
+				for (int coratual1 = 0; coratual1 < 3; coratual1++) {
+					for (int coratual3 = 0; coratual3 < 3; coratual3++) {
+						bool processar2 = true;
+						
+						int cor1 = MSX_Groups[grupoatual1][coratual1];
+						int cor3 = MSX_Groups[grupoatual2][coratual3];
 						int NY1 = MSX_Colors1[cor1][3];
-						int NY2 = MSX_Colors1[cor2][3];
-						if (std::abs(NY2 - NY1) <= MSXDMANUAIS) {
-							ArmazenaCor(cor1, cor2);
-						}
-					}
-					bool podeavancar1 = true;
-					bool podeavancar2 = true;
-					if (coratual1 == 2) {
-						podeavancar1 = false;
-					}
-					if (coratual2 == 2) {
-						podeavancar2 = false;
-					}
-					int coratual3 = coratual1 + 1;
-					int coratual4 = coratual2 + 1;
-					int cor3 = MSX_Groups[grupoatual1][coratual1];
-					if (cor3 == 0) {
-						podeavancar1 = false;
-					}
-					int cor4 = MSX_Groups[grupoatual2][coratual2];
-					if (cor4 == 0) {
-						podeavancar2 = false;
-					}
-					if (!podeavancar1 && !podeavancar2) {
-						temnogrupo = false;
-					} else if (podeavancar1 && !podeavancar2) {
-						coratual1++;
-					} else if (!podeavancar1 && podeavancar2) {
-						coratual2++;
-					} else {
 						int NY3 = MSX_Colors1[cor3][3];
-						int NY4 = MSX_Colors1[cor4][3];
-						if (NY3 <= NY4) {
-							coratual1++;
-						} else {
-							coratual2++;
+						
+						if (cor1 == 0) {
+							processar2 = false;
 						}
+						if (cor3 == 0) {
+							processar2 = false;
+						}
+						if ((NY1 == NY3) && (cor1 > cor3)){
+							processar2 = false;
+						}
+						if (NY1 > NY3) {
+							processar2 = false;
+						}
+						if ((NY3 - NY1) > MSXDMANUAIS) {
+							processar2 = false;
+						}
+						if (coratual1 < 2) {
+							int coratual2 = coratual1 + 1;
+							int cor2 = MSX_Groups[grupoatual1][coratual2];
+							if (cor2 != 0) {
+								int NY2 = MSX_Colors1[cor2][3];
+								if (NY2 < NY3) {
+									processar2 = false;
+								}
+							}
+						}
+						if (coratual3 > 0) {
+							int coratual4 = coratual3 - 1;
+							int cor4 = MSX_Groups[grupoatual2][coratual4];
+							if (cor4 != 0) {
+								int NY4 = MSX_Colors1[cor4][3];
+								if (NY4 > NY1) {
+									processar2 = false;
+								}
+							}
+						}
+						if (processar2) {
+							ArmazenaCor(cor1, cor3);
+						}
+
 					}
 				}
 			}
@@ -495,5 +504,6 @@ void MSXConvert::ArmazenaCor(int cor1, int cor2) {
 		}
 	}
 	//Armazena
+	//std::cout << "cor1 " << corpossivel.cor1 << " cor2 " << corpossivel.cor2 << "\n";
 	corespossiveis.push_back(corpossivel);
 }
